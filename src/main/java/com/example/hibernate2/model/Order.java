@@ -32,4 +32,15 @@ public class Order {
     @Column
     private int amount;
 
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", date=" + date +
+                ", customer=" + customer +
+                ", product_name='" + product_name + '\'' +
+                ", amount=" + amount +
+                '}' +"\r";
+    }
 }

@@ -3,6 +3,8 @@ package com.example.hibernate2.service;
 import com.example.hibernate2.repository.DB;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DBService {
     private DB repository;
@@ -11,7 +13,7 @@ public class DBService {
         this.repository = repository;
     }
 
-    public String getProductByName(String name) {
+    public List getProductByName(String name) {
         return repository.getProductByName(name);
     }
 }

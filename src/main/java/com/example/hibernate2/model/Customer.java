@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -33,6 +33,15 @@ public class Customer {
     private String phone_number;
 
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="CUSTOMER_ID")
-    private Set<Order> orders;
+    private List<Order> orders;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", phone_number='" + phone_number + '\'';
+    }
 }
